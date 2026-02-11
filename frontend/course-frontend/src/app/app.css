@@ -1,0 +1,55 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* Navbar */
+nav {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  padding: 14px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Links */
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+nav a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Active route */
+nav a.active {
+  background: white;
+  color: #667eea;
+  font-weight: 600;
+}
+
+/* Divider */
+hr {
+  border: none;
+  height: 1px;
+  background: #e0e0e0;
+  margin: 0;
+}
+
+/* Page container spacing */
+router-outlet + * {
+  padding: 20px;
+}

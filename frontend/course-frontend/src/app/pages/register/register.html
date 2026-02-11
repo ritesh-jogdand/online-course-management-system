@@ -1,0 +1,16 @@
+<h2>User Registration</h2>
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+  <input type="text" name="name" [(ngModel)]="student.name" required placeholder="Name">
+  <div *ngIf="registerForm.submitted && !student.name" style="color:red;">
+    Name is required
+  </div>
+  <input type="email" name="email" [(ngModel)]="student.email" required email placeholder="Email">
+  <div *ngIf="registerForm.submitted && (!student.email || registerForm.controls['email']?.invalid)" style="color:red;">
+    Enter a valid email
+  </div>
+  <input type="password" name="password" [(ngModel)]="student.password" required placeholder="Password">
+  <div *ngIf="registerForm.submitted && !student.password" style="color:red;">
+    Password is required
+  </div>
+  <button type="submit">Register</button>
+</form>

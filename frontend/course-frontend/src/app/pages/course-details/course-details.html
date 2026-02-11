@@ -1,0 +1,25 @@
+<div class="course-details-wrapper">
+
+  <div *ngIf="course" class="course-card">
+
+    <!-- Title -->
+    <h2 class="page-title">{{ course.courseName }}</h2>
+
+    <!-- Description -->
+    <p class="course-description">{{ course.description }}</p>
+
+    <!-- Meta Info -->
+    <div class="course-meta">
+      <p><b>Instructor:</b> {{ course.instructorName }}</p>
+      <p><b>Duration:</b> {{ course.duration }}</p>
+      <p><b>Price:</b> {{ course.price | currency:'INR':'symbol' }}</p>
+    </div>
+
+    <!-- Enroll Button -->
+    <button (click)="enroll()">Enroll Now</button>
+
+  </div>
+
+  <p *ngIf="!course" class="no-course">Course not found.</p>
+
+</div>

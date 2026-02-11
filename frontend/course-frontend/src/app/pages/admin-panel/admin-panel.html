@@ -1,0 +1,36 @@
+<h2>Admin Panel</h2>
+
+<div class="form-box">
+  <input [(ngModel)]="course.courseName" placeholder="Course Name">
+<input [(ngModel)]="course.description" placeholder="Description">
+<input [(ngModel)]="course.duration" placeholder="Duration">
+<input [(ngModel)]="course.instructorName" placeholder="Instructor">
+<input [(ngModel)]="course.price" type="number" placeholder="Price">
+
+  <button *ngIf="!isEdit" (click)="addCourse()">Add Course</button>
+  <button *ngIf="isEdit" (click)="updateCourse()">Update Course</button>
+</div>
+
+<hr>
+
+<h3>All Courses</h3>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Instructor</th>
+    <th>Price</th>
+    <th>Action</th>
+  </tr>
+
+  <tr *ngFor="let c of courses">
+  <td>{{ c.courseName }}</td>
+  <td>{{ c.instructorName }}</td>
+  <td>{{ c.price }}</td>
+  <td>
+    <button (click)="editCourse(c)">Edit</button>
+    <button (click)="deleteCourse(c.id)">Delete</button>
+  </td>
+</tr>
+
+</table>

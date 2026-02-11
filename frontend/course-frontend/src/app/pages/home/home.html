@@ -1,0 +1,28 @@
+<h2>Available Courses</h2>
+
+<div *ngIf="loading">
+ Loading courses...
+</div>
+
+<div *ngIf="!loading && courses.length > 0">
+
+ <div *ngFor="let c of courses" class="course-card">
+
+  <h3>{{c.courseName}}</h3>
+  <p>{{c.description}}</p>
+  <p>Price: {{c.price}}</p>
+  <p>Duration: {{c.duration}}</p>
+  <p>Instructor: {{c.instructorName}}</p>
+
+  <button (click)="viewDetails(c)">
+  View Detail
+</button>
+
+
+ </div>
+
+</div>
+
+<div *ngIf="!loading && courses.length==0">
+ No Courses Available
+</div>

@@ -1,0 +1,118 @@
+/* Wrapper to center card on HP laptop */
+.course-details-wrapper {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+  min-height: 100vh;         /* full screen height */
+  padding: 30px;
+  background: linear-gradient(to bottom, #f0f4ff, #e0f0ff);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Course Card */
+.course-card {
+  width: 85%;                /* wide enough for laptop */
+  max-width: 750px;          /* perfect on 1080p HP laptop */
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px 45px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+}
+
+/* Page Title */
+.page-title {
+  font-size: 2.4rem;        /* large title */
+  color: #1976d2;
+  margin-bottom: 18px;
+}
+
+/* Description */
+.course-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Meta info */
+.course-meta p {
+  font-size: 1rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Enroll Button */
+.course-card button {
+  margin-top: 22px;
+  padding: 14px 32px;
+  background: linear-gradient(135deg, #1976d2, #42a5f5);
+  color: #fff;
+  border: none;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 1.15rem;
+  cursor: pointer;
+  box-shadow: 0 5px 18px rgba(25,118,210,0.35);
+  transition: transform 0.2s, box-shadow 0.3s, background 0.3s;
+}
+
+.course-card button:hover {
+  transform: scale(1.06);
+  background: linear-gradient(135deg, #0d47a1, #1976d2);
+  box-shadow: 0 7px 22px rgba(25,118,210,0.45);
+}
+
+/* No course message */
+.no-course {
+  color: #d32f2f;
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* Responsive for smaller laptops/tablets */
+@media(max-width: 1366px) {
+  .course-card {
+    max-width: 680px;
+    padding: 35px 40px;
+  }
+  .page-title {
+    font-size: 2rem;
+  }
+  .course-description {
+    font-size: 1rem;
+  }
+  .course-card button {
+    font-size: 1.05rem;
+    padding: 12px 28px;
+  }
+}
+
+/* Responsive for mobile */
+@media(max-width: 480px) {
+  .course-card {
+    max-width: 95%;
+    padding: 25px 25px;
+  }
+  .page-title {
+    font-size: 1.6rem;
+  }
+  .course-description {
+    font-size: 0.95rem;
+  }
+  .course-card button {
+    font-size: 0.95rem;
+    padding: 10px 22px;
+  }
+}
